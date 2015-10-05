@@ -1,9 +1,5 @@
 # api-tester
-A script to test API clients.
-
-In October 2015, I needed a way to test my [API client](https://github.com/jstewmc/api). I made do with public APIs and websites, but it was a pain. 
-
-Then, it hit me. I should just make a script that responds exactly how I tell it to respond, and the API Tester library was born. 
+A script to test API clients. 
 
 Using the API Tester is easy:
 
@@ -24,9 +20,7 @@ $ cd ~/projects
 
 ## Start PHP's development server
 
-Since PHP 5.4.0, the PHP CLI has included a [built-in web server](http://php.net/manual/en/features.commandline.webserver.php). 
-
-We'll use it to run our script on the localhost:
+Use PHP's [built-in web server](http://php.net/manual/en/features.commandline.webserver.php) (requires PHP 5.4.0+) to run our script:
 
 ```
 # navigate to the repo's directory
@@ -45,9 +39,15 @@ Press Ctrl-C to quit
 
 Run your tests with URLs that point to `localhost:8000` using the `format`, `code`, and `output` parameters:
 
-1. `format`, the response's Content-Type (accepts "json" or "xml") (optional; if omitted, defaults to "json")
-2. `code`, the HTTP response code (accepts any valid HTTP code) (optiona; if omitted, defaults to 200)
-3. `output`, the response's content (should be url encoded) (optional; if omitted, defaults to "")
+- `format`, the response's Content-Type 
+  - accepts "json" or "xml"
+  - optional; if omitted, defaults to "json"
+- `code`, the HTTP response code
+  - accepts any valid HTTP code
+  - optional; if omitted, defaults to 200
+- `output`, the response's content
+  - should be url encoded
+  - optional; if omitted, defaults to "" (empty)
 
 For example, the URL below: 
 
@@ -60,6 +60,10 @@ would produce the following output with `Content-Type: application/json` and HTT
 ```
 {"foo":"bar"}
 ```
+
+## About
+
+In October 2015, I needed a way to test my [API client](https://github.com/jstewmc/api). I made do with public APIs and websites, but it was a pain. Then, it hit me. I should just make a script that responds exactly how I tell it to respond, and the API Tester library was born.
 
 ## Version
 
